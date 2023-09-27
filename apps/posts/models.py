@@ -3,13 +3,8 @@ from django.db import models
 # Create your models here.
 
 class About(models.Model):
-    title = models.CharField(
-        max_length=255,
-        verbose_name='Заголовка главной сорницы'
-    )
-    title_text = models.CharField(
-        max_length=255,
-        verbose_name="Описание"
+    title = models.TextField(
+        verbose_name='Заголовка главной строницы'
     )
     image_homepage = models.ImageField(
         upload_to="im_home/"
@@ -83,26 +78,24 @@ class Blog(models.Model):
 
 class Contacts(models.Model):
     name = models.CharField(
-        max_length=255,
+        max_length=155,
         verbose_name="Имя пользователя"
     )
     email = models.EmailField(
         verbose_name="Почта",
         null=True,blank=True
     )
-    subject = models.CharField(
-        max_length=100,
+    phone = models.CharField(
+        max_length=155,
         verbose_name="Номер телефона"
     )
     message = models.TextField(
-        max_length=255,
         verbose_name="Введите ваше сообщение"
     )
-
 
     def __str__(self):
         return self.name
     
     class Meta:
-        verbose_name = ""
-        verbose_name_plural = "Контакты"
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
