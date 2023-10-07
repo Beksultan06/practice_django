@@ -5,8 +5,8 @@ from apps.telegram.views import get_text
 def index(request):
     about = About.objects.latest('id')
     services = Services.objects.all()
-    portfolio = Portfolio.objects.all()
-    blog = Blog.objects.all()
+    portfolio = Portfolio.objects.all().order_by('?')[:3]
+    blog = Blog.objects.all().order_by('?')[:4]
     contacts = Contacts.objects.all()
     name, email, message, phone = "", "", "", ""  # Задаем значения по умолчанию
 

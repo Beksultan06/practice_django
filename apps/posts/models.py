@@ -62,8 +62,7 @@ class Blog(models.Model):
         max_length=50,
         verbose_name="Название болга"
     )
-    descriptions_blog = models.CharField(
-        max_length=255,
+    descriptions_blog = models.TextField(
         verbose_name="Описание блога"
     )
     image = models.ImageField(
